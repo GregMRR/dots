@@ -1,0 +1,11 @@
+[Unit]
+Description=Sync ~/.config at boot and daily
+
+[Timer]
+OnBootSec=5min
+OnCalendar=daily
+RandomizedDelaySec=10min
+Persistent=true
+
+[Install]
+WantedBy=timers.target

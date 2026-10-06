@@ -1,0 +1,50 @@
+# Allow-list: ignore everything, then opt folders in.
+# To track a new app, add a line like: !/appname/
+/*
+!/.gitignore
+!/README.md
+!/dotfiles/
+!/systemd/
+
+# Desktop
+!/hypr/
+!/waybar/
+!/dunst/
+!/wofi/
+!/autostart/
+!/xdg-desktop-portal/
+
+# Theme
+!/gtk-3.0/
+!/gtk-4.0/
+!/nwg-look/
+!/xsettingsd/
+!/settings.ini
+
+# Terminal & tools
+!/kitty/
+!/nvim/
+!/starship.toml
+!/neofetch/
+!/ranger/
+!/htop/
+
+# Editors & apps
+!/zed/
+!/gram/
+!/inkscape/
+!/textext/
+
+# System defaults
+!/mimeapps.list
+!/user-dirs.dirs
+!/user-dirs.locale
+!/pavucontrol.ini
+
+# Noise inside tracked folders
+*.bak
+*.old_superseded_by_lua
+*.log
+inkscape/cphistory.xml
+inkscape/dialogs-state-ex.ini
+textext/.cache.json

@@ -1,0 +1,6 @@
+[Unit]
+Description=Commit and push ~/.config to GitHub
+
+[Service]
+Type=oneshot
+ExecStart=%h/.config/dotfiles/sync.sh

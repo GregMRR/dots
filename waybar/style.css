@@ -1,0 +1,86 @@
+*{
+    border: none;
+    border-radius: 5;
+    font-family: Hack Nerd Font ;
+    font-size: 17px;
+    min-height: 0;
+    color: white;
+    padding: 1px;
+}
+
+window#waybar {
+    opacity: 0.85;
+    background: rgba(30, 31, 41, .9);
+    color: white;
+    border: 2px solid #DB13A7;
+}
+
+#workspaces{
+    margin-top: 3px;
+    margin-bottom: 2px;
+    margin-right: 10px;
+    margin-left: 25px;
+}
+
+#workspaces button{
+    border-radius: 15px;
+    margin-right: 10px;
+    padding: 1px 10px;
+    font-weight: bolder;
+    background-color: #181818;
+}
+
+#workspaces button.active, #workspaces button.focused{
+    padding: 1 10px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;    
+    background: #7C9D96;
+}
+
+#window {
+  padding: 0 10px;
+}
+#clock {
+  background: #262626;
+  padding : 0 6px;
+}
+#memory {
+  padding: 0 10px;
+}
+#temperature {
+  padding: 0 10px;
+}
+#cpu {
+  background: #262626;
+  padding: 0 10px;
+}
+#bluetooth {
+  padding: 0 10px;
+}
+#network {
+  padding: 0 10px;
+}
+#pulseaudio {
+  padding: 0 10px;
+}
+#tray {
+  padding: 0 10px;
+}
+#battery {
+  padding: 0 10px;
+} 
+#battery.warning {
+  background: transparent;
+  color: #f5a97f;
+}
+#battery.critical {
+  background: transparent;
+  color: #ed8796;
+}
+#battery.charging {
+  background: transparent;
+  color: #00ff88;
+}
+#temperature.critical {
+  background: transparent;
+  color: #ed8796;
+}

@@ -1,0 +1,13 @@
+arc-gtk-theme
+full-dracula-theme-git
+gtk-cyberpunk-neon-theme-git
+neofetch
+sddm-terminal-inspired-theme-git
+sddm-theme-obscure-git
+simple-sddm-theme-2-git
+slack-desktop
+textext
+where-is-my-sddm-theme-git
+xcursor-simp1e-nord-dark
+yay
+zotero

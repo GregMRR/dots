@@ -1,0 +1,14 @@
+[Default Applications]
+application/pdf=org.pwmt.zathura-pdf-poppler.desktop
+x-scheme-handler/slack=slack.desktop
+image/jpeg=sxiv.desktop
+x-scheme-handler/claude-cli=claude-code-url-handler.desktop
+image/png=sxiv.desktop
+
+[Added Associations]
+application/pdf=libreoffice-writer.desktop;org.pwmt.zathura-pdf-poppler.desktop;
+application/msword=org.pwmt.zathura.desktop;
+image/vnd.djvu+multipage=firefox.desktop;
+image/jpeg=sxiv.desktop;
+text/plain=libreoffice-calc.desktop;
+image/png=org.pwmt.zathura.desktop;
