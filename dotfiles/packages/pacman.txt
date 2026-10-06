@@ -18,6 +18,7 @@ efibootmgr
 firefox
 fox
 git
+gitleaks
 gram
 grim
 gst-plugin-pipewire
