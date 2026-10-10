@@ -58,7 +58,8 @@
   "tooltip-format": "{essid}\n{ipaddr}\nSignal: {signalStrength}%",                                     
   "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],                                                            
   "format-disconnected": "󰤮",                                                                           
-  "on-click": "nm-connection-editor"                                                                    
+  "on-click": "kitty --class nmtui -e nmtui-connect",
+  "on-click-right": "nm-connection-editor"                                                                    
   },
 "idle_inhibitor": {
     "format": "{icon}",

@@ -417,6 +417,16 @@ hl.window_rule({
     center = true,
 })
 
+hl.window_rule({
+    name = "nmtui",
+    match = {
+        class = "^nmtui$",
+    },
+    float = true,
+    center = true,
+    size = "800 600",
+})
+
 hl.config({
     general = {
         gaps_in = 3,

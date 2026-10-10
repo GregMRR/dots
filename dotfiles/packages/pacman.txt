@@ -49,11 +49,13 @@ nano
 neovim
 network-manager-applet
 networkmanager
+networkmanager-openconnect
 nextcloud-client
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
 nwg-look
+openconnect
 otf-font-awesome
 pamixer
 pavucontrol
