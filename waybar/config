@@ -8,8 +8,14 @@
 
 "modules-left": ["hyprland/window"],
 "modules-center": ["hyprland/workspaces"],
-"modules-right":  ["tray","network","pulseaudio","bluetooth","cpu","temperature","memory","clock","battery"],
+"modules-right":  ["tray","network","pulseaudio","bluetooth","custom/claude","cpu","temperature","memory","clock","battery"],
 
+"custom/claude": {
+  "exec": "python3 ~/.config/waybar/scripts/claude-usage.py",
+  "return-type": "json",
+  "interval": 120,
+  "tooltip": true
+},
 "battery": {
   "format": "{icon} {capacity}%",
   "format-charging": "󰂄 {capacity}%",
