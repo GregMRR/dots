@@ -8,11 +8,11 @@ from pathlib import Path
 
 CREDS = Path.home() / ".claude/.credentials.json"
 URL = "https://api.anthropic.com/api/oauth/usage"
-ICON = "⛤"
+ICON = "󰚩"
 
 
 def out(text, tooltip, cls="", pct=0):
-    print(json.dumps({"text": text, "tooltip": tooltip, "class": cls, "percentage": pct}))
+    print(json.dumps({"text": f"{ICON}  {text}", "tooltip": tooltip, "class": cls, "percentage": pct}))
 
 
 def fmt_reset(iso, fmt):
@@ -24,7 +24,7 @@ def fmt_reset(iso, fmt):
 def main():
     oauth = json.loads(CREDS.read_text())["claudeAiOauth"]
     if oauth.get("expiresAt", 0) / 1000 < time.time():
-        return out(f"{ICON} –", "Token expired — run claude to refresh")
+        return out("–", "Token expired — run claude to refresh")
 
     req = urllib.request.Request(URL, headers={
         "Authorization": f"Bearer {oauth['accessToken']}",
@@ -44,10 +44,10 @@ def main():
         f"Session (5h): {s}% — resets {fmt_reset(five.get('resets_at'), '%H:%M')}\n"
         f"Weekly: {w}% — resets {fmt_reset(week.get('resets_at'), '%a %H:%M')}"
     )
-    out(f"{ICON} {s}% · {w}%", tooltip, cls, top)
+    out(f"{s}% / {w}%", tooltip, cls, top)
 
 
 try:
     main()
 except Exception as e:
-    out(f"{ICON} ?", f"Claude usage error: {e}")
+    out("?", f"Claude usage error: {e}")
