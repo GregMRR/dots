@@ -1,0 +1,7 @@
+[Unit]
+Description=Back up Claude Code token usage to GitHub
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 %h/claude-usage/usage_backup.py
