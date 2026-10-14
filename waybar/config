@@ -13,7 +13,7 @@
 "custom/claude": {
   "exec": "python3 ~/.config/waybar/scripts/claude-usage.py",
   "return-type": "json",
-  "interval": 120,
+  "interval": 300,
   "tooltip": true
 },
 "battery": {
