@@ -33,6 +33,7 @@ inkscape
 intel-media-driver
 iptables
 iwd
+jq
 julia
 jupyter-notebook
 kitty
