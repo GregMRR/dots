@@ -12,3 +12,4 @@ image/vnd.djvu+multipage=firefox.desktop;
 image/jpeg=sxiv.desktop;
 text/plain=libreoffice-calc.desktop;
 image/png=org.pwmt.zathura.desktop;
+application/vnd.wolfram.nb=com.wolfram.Wolfram.14.3.desktop;
