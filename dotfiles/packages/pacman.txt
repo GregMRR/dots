@@ -41,6 +41,7 @@ kwallet-pam
 libpulse
 libreoffice-extension-texmaths
 libreoffice-fresh
+librewolf
 libva-intel-driver
 libvirt
 linux

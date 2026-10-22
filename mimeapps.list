@@ -4,6 +4,7 @@ x-scheme-handler/slack=slack.desktop
 image/jpeg=sxiv.desktop
 x-scheme-handler/claude-cli=claude-code-url-handler.desktop
 image/png=sxiv.desktop
+text/julia=app.liten.Gram.desktop
 
 [Added Associations]
 application/pdf=libreoffice-writer.desktop;org.pwmt.zathura-pdf-poppler.desktop;
@@ -13,3 +14,4 @@ image/jpeg=sxiv.desktop;
 text/plain=libreoffice-calc.desktop;
 image/png=org.pwmt.zathura.desktop;
 application/vnd.wolfram.nb=com.wolfram.Wolfram.14.3.desktop;
+text/julia=app.liten.Gram.desktop;
