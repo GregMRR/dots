@@ -16,6 +16,7 @@ dnsmasq
 dunst
 efibootmgr
 firefox
+flatpak
 fox
 git
 gitleaks
@@ -38,6 +39,7 @@ julia
 jupyter-notebook
 kitty
 kwallet-pam
+less
 libpulse
 libreoffice-extension-texmaths
 libreoffice-fresh
