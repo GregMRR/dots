@@ -15,3 +15,4 @@ text/plain=libreoffice-calc.desktop;
 image/png=org.pwmt.zathura.desktop;
 application/vnd.wolfram.nb=com.wolfram.Wolfram.14.3.desktop;
 text/julia=app.liten.Gram.desktop;
+text/x-python=app.liten.Gram.desktop;
