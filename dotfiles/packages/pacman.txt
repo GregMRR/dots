@@ -20,6 +20,7 @@ flatpak
 fox
 git
 gitleaks
+glow
 gram
 grim
 gst-plugin-pipewire
