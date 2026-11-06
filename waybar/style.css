@@ -89,8 +89,10 @@ window#waybar {
   padding: 0 10px;
 }
 #custom-claude.warning {
+  background: transparent;
   color: #f5a97f;
 }
 #custom-claude.critical {
+  background: transparent;
   color: #ed8796;
 }
