@@ -1,13 +1,12 @@
 #!/bin/bash
+# Toggle mirroring of the laptop screen (eDP-1) on HDMI-A-1.
+# The Lua config rejects `hyprctl keyword`, so this uses `hyprctl eval`.
+# hl.monitor() keeps fields from earlier calls, so clear `mirror` explicitly.
 
-STATE_FILE="/tmp/mirror_toggle"
-CURRENT=$(cat "$STATE_FILE" 2>/dev/null)
+MIRROR=$(hyprctl monitors all -j | jq -r '.[] | select(.name == "HDMI-A-1") | .mirrorOf')
 
-if [ "$CURRENT" = "mirrored" ]; then
-  hyprctl keyword monitor "HDMI-A-1,disable"
-  hyprctl keyword monitor "HDMI-A-1,preferred,auto-up,1"
-  echo "unmirrored" >"$STATE_FILE"
+if [ -n "$MIRROR" ] && [ "$MIRROR" != "none" ]; then
+  hyprctl eval 'hl.monitor({ output = "HDMI-A-1", mode = "preferred", position = "auto-up", scale = "1", mirror = "" })'
 else
-  hyprctl keyword monitor "HDMI-A-1,preferred,auto-up,1,mirror,eDP-1"
-  echo "mirrored" >"$STATE_FILE"
+  hyprctl eval 'hl.monitor({ output = "HDMI-A-1", mode = "preferred", position = "auto-up", scale = "1", mirror = "eDP-1" })'
 fi

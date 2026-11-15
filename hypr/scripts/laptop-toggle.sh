@@ -1,14 +1,13 @@
 #!/bin/bash
+# Toggle the laptop screen (eDP-1) on/off.
+# The Lua config rejects `hyprctl keyword`, so this uses `hyprctl eval`.
+# hl.monitor() keeps fields from earlier calls, so set `disabled` explicitly.
 
-STATE_FILE="/tmp/main_display_toggle"
-CURRENT=$(cat "$STATE_FILE" 2>/dev/null)
+DISABLED=$(hyprctl monitors all -j | jq -r '.[] | select(.name == "eDP-1") | .disabled')
 
-if [ "$CURRENT" = "disabled" ]; then
-  hyprctl keyword monitor "eDP-1,preferred,auto,1"
-  hyprctl keyword monitor "HDMI-A-1,disable"
-  hyprctl keyword monitor "HDMI-A-1,preferred,auto-up,1"
-  echo "enabled" >"$STATE_FILE"
+if [ "$DISABLED" = "true" ]; then
+  hyprctl eval 'hl.monitor({ output = "eDP-1", mode = "preferred", position = "auto", scale = "1", disabled = false })'
+  hyprctl eval 'hl.monitor({ output = "HDMI-A-1", mode = "preferred", position = "auto-up", scale = "1" })'
 else
-  hyprctl keyword monitor "eDP-1,disable"
-  echo "disabled" >"$STATE_FILE"
+  hyprctl eval 'hl.monitor({ output = "eDP-1", disabled = true })'
 fi

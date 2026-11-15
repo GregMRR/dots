@@ -293,6 +293,10 @@ hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ to
 hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+ && val=$(brightnessctl -e4 -n2 get) && max=$(brightnessctl -e4 -n2 max) && percent=$((val*100/max)) && dunstify -r 9992 -t 800 -h int:value:$percent \"Brightness\""), { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%- && val=$(brightnessctl -e4 -n2 get) && max=$(brightnessctl -e4 -n2 max) && percent=$((val*100/max)) && dunstify -r 9992 -t 800 -h int:value:$percent \"Brightness\""), { locked = true, repeating = true })
+
+-- Toggle the laptop screen / mirroring on HDMI (keep an external screen connected before Super+Y)
+hl.bind(mainMod .. " + Y", hl.dsp.exec_cmd(os.getenv("HOME") .. "/.config/hypr/scripts/laptop-toggle.sh"))
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(os.getenv("HOME") .. "/.config/hypr/scripts/mirror-toggle.sh"))
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
@@ -535,9 +539,6 @@ hl.config({
     --##################
     -- See https://wiki.hypr.land/Configuring/Keywords/
     -- Example binds, see https://wiki.hypr.land/Configuring/Binds/ for more
-    --binds to disable/enable monitors at will a bit dangerous
-    --bind = $mainMod, Y, exec, $HOME/.config/hypr/scripts/laptop-toggle.sh
-    --bind = $mainMod, E, exec, $HOME/.config/hypr/scripts/mirror-toggle.sh
     --Move focus with mainMod + arrow keys
     --resizing windows with keys 
     --resizing windows with vim bindings
