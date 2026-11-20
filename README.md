@@ -1,6 +1,27 @@
 # dots
 
-`~/.config` for my Arch + Hyprland laptop. It's backed up automatically by `config-sync.timer`, which runs 5 min after boot and once a day. It commits any changes plus the installed package lists, then pushes. If the laptop is offline, the commits wait and go out on the next run.
+`~/.config` for my Arch + Hyprland laptop (hostname `unicorn`). A systemd timer keeps this repo up to date automatically.
+
+## What runs automatically
+
+There is no cron job. Two systemd user timers run on `unicorn`:
+
+| Timer | Schedule | Action |
+|---|---|---|
+| `config-sync.timer` | 5 min after boot, and daily (up to 10 min random delay; a missed run starts at the next boot) | Runs `dotfiles/sync.sh` to commit and push this repo |
+| `claude-usage.timer` | Mondays 10:00 | Runs `~/claude-usage/usage_backup.py` to back up Claude Code token usage to GitHub. The script is outside this repo. |
+
+`dotfiles/sync.sh` does these steps in order:
+
+1. Save the installed package lists to `dotfiles/packages/pacman.txt` and `aur.txt`.
+2. Stage all changes (`git add -A`).
+3. Scan the staged changes with `gitleaks`.
+4. Commit with the message `auto-sync unicorn <date time>`. This message shows which machine made the commit.
+5. Push to `origin main`. If the laptop is offline, the commit waits and goes out on the next run.
+
+If `gitleaks` is missing or finds a possible secret, the script commits nothing, unstages the changes and shows a critical desktop notification. To fix it, remove the secret or add its fingerprint to `.gitleaksignore`.
+
+To see the timers: `systemctl --user list-timers`.
 
 ## Restore on a new laptop
 
