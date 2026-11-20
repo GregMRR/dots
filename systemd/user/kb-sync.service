@@ -1,0 +1,6 @@
+[Unit]
+Description=Sync the research knowledge bases (kb sync)
+
+[Service]
+Type=oneshot
+ExecStart=/home/greg/.local/bin/kb sync --all --auto --quiet

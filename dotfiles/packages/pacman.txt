@@ -12,13 +12,13 @@ brightnessctl
 cowsay
 discord
 dmidecode
-dnsmasq
 dunst
 efibootmgr
 firefox
 flatpak
 fox
 git
+github-cli
 gitleaks
 glow
 gram
@@ -46,7 +46,6 @@ libreoffice-extension-texmaths
 libreoffice-fresh
 librewolf
 libva-intel-driver
-libvirt
 linux
 linux-firmware
 linux-lts
@@ -73,7 +72,6 @@ pipewire-pulse
 polkit-kde-agent
 pstoedit
 qbittorrent
-qemu-base
 qt5-graphicaleffects
 qt5-quickcontrols
 qt5-quickcontrols2
@@ -90,6 +88,7 @@ smartmontools
 sof-firmware
 starship
 steam
+strace
 sxiv
 texlive-basic
 texlive-latexrecommended
@@ -105,7 +104,6 @@ ttf-linux-libertine-g
 unzip
 uwsm
 vim
-virt-manager
 vulkan-intel
 vulkan-nouveau
 vulkan-radeon
